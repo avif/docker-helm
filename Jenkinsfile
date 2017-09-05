@@ -5,7 +5,7 @@ podTemplate(label: 'docker',
   node('docker') {
     currentBuild.result = "SUCCESS"
     def IMAGE_NAME = 'avif/docker-helm'
-    def BUILD_TAG = '${env.BRANCH_NAME}-build-${env.BUILD_NUMBER}'
+    def BUILD_TAG = "${env.BRANCH_NAME}-build-${env.BUILD_NUMBER}"
 
     stage('Checking out source control...') {
       checkout scm
